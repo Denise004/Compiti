@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Selezione a cascata</h1>
+    <div>
+        Provincia:
+        <select id="province" onchange="setComuni(this.value)">
+            <option value="">-- Scegli la provincia --</option>
+        </select>
+    </div>
+    <div>
+        Comune:
+        <select id="comuni"></select>
+    </div>
+</body>
+
+<script>
+
+    const elenco = {
+        "Parma": ["Fornovo","Medesano","Salsomaggiore"],
+        "Piacenza": ["Fiorenzuola", "Cadeo"]
+    }
+
+    let province = document.getElementById("province");
+    let comuni = document.getElementById("comuni");    
+
+    function getProvince() {
+        for (var x in elenco) {
+            province.options[province.options.length] = new Option(x);
+        }
+    }
+    function cleanSelect() {
+        for(x in comuni.options) {
+            comuni.remove(x);
+        }
+    }
+    function setComuni(provincia) {
+        cleanSelect();
+        for (var x in elenco) {
+            if(x == provincia) {
+                for(y in elenco[x] ) {
+                    console.log(y)
+                    comuni.options[comuni.options.length] = new Option(elenco[x][y]);
+                }               
+            }            
+        }
+    }
+    
+    getProvince();
+
+</script>
+
+</html>
