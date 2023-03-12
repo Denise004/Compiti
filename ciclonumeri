@@ -1,0 +1,26 @@
+Const l =20 ;
+Const max =50 ;
+Let valori = [] ; // inizializzo l’array 
+Let contatore = 0;
+Let trovato ; //  per controllare se ci sono doppi 
+
+//ciclo 
+Do {
+	trovato =0 ; // lo inizializzo qua perché a ogni ciclo si azzera 
+	//Generazione NUM
+      while (valori.length < 20) {
+        var num = Math.floor(Math.random() * 49) + 1;
+        if (!valori.includes(num)) {
+          numeriCasuali.push(num);
+        }
+      }
+
+	//verifica se il numero è presente 
+	for(i=0 ; i<=contatore ;i++){
+		if(estratto== valori[I] ){
+		trovato=1; // se è presente lo stesso valore esce dal if e continua con l’array 
+		break;
+		}
+	}
+	
+} while(contatore <= l ) 
